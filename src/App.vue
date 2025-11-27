@@ -2,7 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 
-const test = ref('');
+const test = ref('')
 </script>
 
 <template>
