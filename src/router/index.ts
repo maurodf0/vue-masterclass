@@ -25,6 +25,11 @@ const router = createRouter({
       name: 'not-found',
       component: h('h1', { style: 'color: red' }, 'Not found'),
     },
+    {
+      path: '/projects/:catchAll(.*)*',
+      name: 'projects-not-found',
+      component: h('h1', { style: 'color: red' }, '404 Project Not found'),
+    },
   ],
 })
 
