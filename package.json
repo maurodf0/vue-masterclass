@@ -15,7 +15,10 @@
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix --cache",
     "lint": "run-s lint:*",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "supabase:init": "npx --yes supabase init",
+    "supabase:login": "npx --yes supabase login",
+    "supabase:link": "npx --yes supabase link --project-ref dlhsgbwfwbakculetdcg"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.43.4",
