@@ -18,7 +18,9 @@
     "format": "prettier --write --experimental-cli src/",
     "supabase:init": "npx --yes supabase init",
     "supabase:login": "npx --yes supabase login",
-    "supabase:link": "npx --yes supabase link --project-ref dlhsgbwfwbakculetdcg"
+    "supabase:link": "npx --yes supabase link --project-ref dlhsgbwfwbakculetdcg",
+    "db:migrate:new": "npx --yes supabase migration new projects-schema",
+    "db:reset": "npx --yes supabase db reset --linked"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.43.4",
