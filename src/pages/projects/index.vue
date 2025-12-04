@@ -2,7 +2,7 @@
 import { supabase } from '@/lib/supabaseClient'
 import { onMounted, ref } from 'vue'
 
-const projects = ref([])
+const projects = ref<any[] | null>(null)
 const getProjects = async () => {
   const { data, error } = await supabase.from('projects').select('*')
   if (error) console.log(error)
