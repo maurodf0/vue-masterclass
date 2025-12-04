@@ -19,7 +19,7 @@
     "supabase:init": "npx --yes supabase init",
     "supabase:login": "npx --yes supabase login",
     "supabase:link": "npx --yes supabase link --project-ref dlhsgbwfwbakculetdcg",
-    "db:migrate:new": "npx --yes supabase migration new projects-schema",
+    "db:migrate:new": "npx --yes supabase migration new",
     "db:reset": "npx --yes supabase db reset --linked",
     "db:seed": "node --env-file=.env database/seed.js",
     "supabase:types": "npx supabase gen types typescript --project-id dlhsgbwfwbakculetdcg --schema public > database/types.ts"
