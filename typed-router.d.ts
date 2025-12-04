@@ -44,13 +44,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/projects/[...catchAll]': RouteRecordInfo<
-      '/projects/[...catchAll]',
-      '/projects/:catchAll(.*)',
-      { catchAll: ParamValue<true> },
-      { catchAll: ParamValue<false> },
-      | never
-    >,
     '/projects/[id]': RouteRecordInfo<
       '/projects/[id]',
       '/projects/:id',
@@ -86,12 +79,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/projects/index.vue': {
       routes:
         | '/projects/'
-      views:
-        | never
-    }
-    'src/pages/projects/[...catchAll].vue': {
-      routes:
-        | '/projects/[...catchAll]'
       views:
         | never
     }
