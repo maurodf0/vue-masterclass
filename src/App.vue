@@ -1,22 +1,39 @@
 <script setup lang="ts">
-import { supabase } from '@/lib/supabaseClient'
 import Input from '@/components/ui/input/Input.vue'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 </script>
 
 <template>
+  <nav class="h-16 border-b bg-muted/40 flex justify-between px-6 items-center">
+    <form class="w-full max-w-96">
+      <Input class="w-full pl-8 bg-background" type="text" placeholder="Search ..." />
+    </form>
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <Avatar>
+          <AvatarImage src="https://github.com/radix-vue.png" alt="@radix-vue" />
+          <AvatarFallback>KI</AvatarFallback>
+        </Avatar>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Billing</DropdownMenuItem>
+        <DropdownMenuItem>Team</DropdownMenuItem>
+        <DropdownMenuItem>Subscription</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  </nav>
   <main>
-    <nav class="h-16 border-b bg-muted/40 flex items-center justify-between">
-      <form class="w-full max-w-96">
-        <Input
-          type="text"
-          placeholder="Search..."
-          class="w-full pl-8 bg-background/80 border-b border-border"
-        />
-      </form>
-      <div class="w-8 h-8 rounded-full bg-background/80 border-b border-border"></div>
-    </nav>
     <RouterView />
   </main>
 </template>
-
-<style scoped></style>
