@@ -15,13 +15,6 @@
     <nav class="flex flex-col gap-2 justify-between h-full relative">
       <div>
         <RouterLink
-          to="/"
-          class="flex items-center gap-3 px-4 py-2 mx-2 transition-colors rounded-lg hover:text-primary justify-center lg:justify-normal text-muted-foreground"
-        >
-          <iconify-icon icon="lucide:house"></iconify-icon>
-          <span class="hidden lg:block text-nowrap">Dashboard</span>
-        </RouterLink>
-        <RouterLink
           to="/projects"
           class="flex items-center gap-3 px-4 py-2 mx-2 transition-colors rounded-lg hover:text-primary justify-center lg:justify-normal text-muted-foreground"
         >
