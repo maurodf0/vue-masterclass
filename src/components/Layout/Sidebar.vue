@@ -1,3 +1,25 @@
+<script setup lang="ts">
+import SidebarLinks from './SidebarLinks.vue'
+
+const links = [
+  {
+    title: 'Dashboard',
+    to: '/',
+    icon: 'lucide:house',
+  },
+  {
+    title: 'Projects',
+    to: '/projects',
+    icon: 'lucide:building-2',
+  },
+  {
+    title: 'My Tasks',
+    to: '/tasks',
+    icon: 'lucide:badge-check',
+  },
+]
+</script>
+
 <template>
   <aside
     class="flex flex-col h-screen gap-2 border-r fixed bg-muted/40 lg:w-52 w-16 transition-[width]"
@@ -14,20 +36,7 @@
 
     <nav class="flex flex-col gap-2 justify-between h-full relative">
       <div>
-        <RouterLink
-          to="/projects"
-          class="flex items-center gap-3 px-4 py-2 mx-2 transition-colors rounded-lg hover:text-primary justify-center lg:justify-normal text-muted-foreground"
-        >
-          <iconify-icon icon="lucide:building-2"></iconify-icon>
-          <span class="hidden lg:block text-nowrap">Projects</span>
-        </RouterLink>
-        <RouterLink
-          to="/tasks"
-          class="flex items-center gap-3 px-4 py-2 mx-2 transition-colors rounded-lg hover:text-primary justify-center lg:justify-normal text-muted-foreground"
-        >
-          <iconify-icon icon="lucide:badge-check"></iconify-icon>
-          <span class="hidden lg:block text-nowrap">My Tasks</span>
-        </RouterLink>
+        <SidebarLinks :links="links" />
       </div>
 
       <div class="border-y text-center bg-background py-3">
