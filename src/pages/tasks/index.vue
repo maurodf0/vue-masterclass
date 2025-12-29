@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
-import { onMounted, ref, h } from 'vue'
+import { h, ref } from 'vue'
 import type { Tables } from '../../../database/types'
 import type { ColumnDef } from '@tanstack/vue-table'
-import DataTable from '@/components/ui/DataTable/DataTable.vue'
+import DataTable from '@/components/ui/dataTable/DataTable.vue'
 
 const tasks = ref<Tables<'tasks'>[] | null>(null)
-const getProjects = async () => {
-  const { data, error } = await supabase.from('tasks').select('*')
+;(async () => {
+  const { data, error } = await supabase.from('tasks').select()
+
   if (error) console.log(error)
 
-  console.log(data)
   tasks.value = data
-}
-
-onMounted(getProjects)
+})()
 
 const columns: ColumnDef<Tables<'tasks'>>[] = [
   {
@@ -22,6 +20,38 @@ const columns: ColumnDef<Tables<'tasks'>>[] = [
     header: () => h('div', { class: 'text-left' }, 'Name'),
     cell: ({ row }) => {
       return h('div', { class: 'text-left font-medium' }, row.getValue('name'))
+    },
+  },
+  {
+    accessorKey: 'status',
+    header: () => h('div', { class: 'text-left' }, 'Status'),
+    cell: ({ row }) => {
+      return h('div', { class: 'text-left font-medium' }, row.getValue('status'))
+    },
+  },
+  {
+    accessorKey: 'due_date',
+    header: () => h('div', { class: 'text-left' }, 'Due Date'),
+    cell: ({ row }) => {
+      return h('div', { class: 'text-left font-medium' }, row.getValue('due_date'))
+    },
+  },
+  {
+    accessorKey: 'project_id',
+    header: () => h('div', { class: 'text-left' }, 'Project'),
+    cell: ({ row }) => {
+      return h('div', { class: 'text-left font-medium' }, row.getValue('project_id'))
+    },
+  },
+  {
+    accessorKey: 'collaborators',
+    header: () => h('div', { class: 'text-left' }, 'Collaborators'),
+    cell: ({ row }) => {
+      return h(
+        'div',
+        { class: 'text-left font-medium' },
+        JSON.stringify(row.getValue('collaborators')),
+      )
     },
   },
 ]
