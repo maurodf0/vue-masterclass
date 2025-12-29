@@ -17,15 +17,5 @@ onMounted(getProjects)
 <template>
   <div>
     <h1>Home Page</h1>
-    <p>Welcome to the home page of the Vue Masterclass project.</p>
-    <p>Here you can find a list of all the projects:</p>
-    <ul>
-      <li v-for="project in projects" :key="project.id">
-        <RouterLink :to="{ name: '/projects/[id]', params: { id: project.id } }">
-          {{ project.name }}
-        </RouterLink>
-      </li>
-    </ul>
-    <RouterLink :to="{ name: '/projects/[id]', params: { id: 1 } }">Go to Project 1</RouterLink>
   </div>
 </template>

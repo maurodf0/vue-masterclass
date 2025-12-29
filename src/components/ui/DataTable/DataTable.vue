@@ -62,3 +62,13 @@ const table = useVueTable({
     </Table>
   </div>
 </template>
+
+<style scoped>
+td {
+  padding: 0;
+}
+
+td > * {
+  padding: 16px;
+}
+</style>
