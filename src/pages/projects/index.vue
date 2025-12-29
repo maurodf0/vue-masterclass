@@ -16,9 +16,9 @@ onMounted(getProjects)
 const columns: columnDef<Tables<'projects'>>[] = [
   {
     accessorKey: 'name',
-    header: () => h('div', { class: 'text-left' }, 'Name'),
+    header: () => h('div', { class: 'text-left font-bold' }, 'Name'),
     cell: ({ row }) => {
-      return h('div', { class: 'text-left font-medium' }, row.getValue('name'))
+      return h('div', { class: 'text-left' }, row.getValue('name'))
     },
   },
 ]
