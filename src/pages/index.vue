@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
-import { onMounted, ref } from 'vue'
 
 const projects = ref([])
 const getProjects = async () => {
