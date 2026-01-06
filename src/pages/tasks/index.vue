@@ -2,8 +2,7 @@
 import { supabase } from '@/lib/supabaseClient'
 import type { Tables } from '../../../database/types'
 import type { ColumnDef } from '@tanstack/vue-table'
-import DataTable from '@/components/ui/dataTable/DataTable.vue'
-
+import { RouterLink } from 'vue-router'
 const tasks = ref<Tables<'tasks'>[] | null>(null)
 ;(async () => {
   const { data, error } = await supabase.from('tasks').select()
