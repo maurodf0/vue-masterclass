@@ -2,6 +2,8 @@
 
 <template>
   <AuthLayout>
-    <RouterView />
+    <Suspense>
+      <RouterView />
+    </Suspense>
   </AuthLayout>
 </template>
