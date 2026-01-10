@@ -4,7 +4,6 @@ import type { Tables } from '../../../database/types'
 import type { ColumnDef } from '@tanstack/vue-table'
 import { RouterLink } from 'vue-router'
 
-import { UsePageStore } from '@/stores/page'
 UsePageStore().pageData.title = 'Projects'
 
 const projects = ref<Tables<'projects'>[] | null>(null)

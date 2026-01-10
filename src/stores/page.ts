@@ -1,5 +1,3 @@
-import { defineStore, acceptHMRUpdate } from 'pinia'
-
 export const UsePageStore = defineStore('pages', () => {
   const pageData = ref({
     title: '',

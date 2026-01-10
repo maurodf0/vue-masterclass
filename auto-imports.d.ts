@@ -7,11 +7,15 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue').EffectScope
+  const UsePageStore: typeof import('./src/stores/page').UsePageStore
+  const acceptHMRUpdate: typeof import('pinia').acceptHMRUpdate
+  const cn: typeof import('./src/lib/utils').cn
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
   const customRef: typeof import('vue').customRef
   const defineAsyncComponent: typeof import('vue').defineAsyncComponent
   const defineComponent: typeof import('vue').defineComponent
+  const defineStore: typeof import('pinia').defineStore
   const effectScope: typeof import('vue').effectScope
   const getCurrentInstance: typeof import('vue').getCurrentInstance
   const getCurrentScope: typeof import('vue').getCurrentScope
@@ -49,6 +53,8 @@ declare global {
   const shallowReactive: typeof import('vue').shallowReactive
   const shallowReadonly: typeof import('vue').shallowReadonly
   const shallowRef: typeof import('vue').shallowRef
+  const storeToRefs: typeof import('pinia').storeToRefs
+  const supabase: typeof import('./src/lib/supabaseClient').supabase
   const toRaw: typeof import('vue').toRaw
   const toRef: typeof import('vue').toRef
   const toRefs: typeof import('vue').toRefs
