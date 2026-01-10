@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
 import { UsePageStore } from '@/stores/page'
-usePageStore().pageData.title = 'Home'
+UsePageStore().pageData.title = 'Home'
 
 const projects = ref([])
 const getProjects = async () => {
@@ -16,7 +16,5 @@ onMounted(getProjects)
 </script>
 
 <template>
-  <div>
-    <h1>Home Page</h1>
-  </div>
+  <div></div>
 </template>
