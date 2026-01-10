@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { supabase } from '@/lib/supabaseClient'
+import { UsePageStore } from '@/stores/page'
+usePageStore().pageData.title = 'Home'
 
 const projects = ref([])
 const getProjects = async () => {
